@@ -2,5 +2,6 @@
 
 A playground for Kubernetes experimentation
 
-## Nginx Ingress configuration sample
+## Nginx Ingress
 
+Minikube configuration for using Nginx as a cluster load balancer.

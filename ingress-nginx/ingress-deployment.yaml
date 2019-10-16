@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: sample-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+        - path: /parrot
+          backend:
+            serviceName: parrot-service
+            servicePort: 3000
+        - path: /random
+          backend:
+            serviceName: randomizer-service
+            servicePort: 3000

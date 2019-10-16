@@ -1,0 +1,29 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: randomizer-service
+spec:
+  selector:
+    app: randomizer
+  ports:
+    - port: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: randomizer
+spec:
+  selector:
+    matchLabels:
+      app: randomizer
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: randomizer
+    spec:
+      containers:
+        - name: randomizer
+          image: medeiser/randomizer:latest
+          ports:
+            - containerPort: 3000
