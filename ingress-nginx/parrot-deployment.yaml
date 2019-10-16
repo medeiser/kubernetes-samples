@@ -27,3 +27,4 @@ spec:
           image: medeiser/parrot:latest
           ports:
             - containerPort: 3000
+            
