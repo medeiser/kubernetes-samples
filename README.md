@@ -6,6 +6,6 @@ A playground for Kubernetes experimentation
 
 Minikube configuration for using Nginx as a cluster load balancer.
 
-## Ambassador Dynamic Router
+## Ambassador
 
-Minikube configuration for using [Ambassador](https://www.getambassador.io/), enabling dynamic routing options.
+Minikube configuration for using [Ambassador](https://www.getambassador.io/).
