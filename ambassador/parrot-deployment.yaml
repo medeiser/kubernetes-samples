@@ -1,0 +1,38 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: parrot-service
+spec:
+  selector:
+    app: parrot
+  ports:
+    - port: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: parrot
+spec:
+  selector:
+    matchLabels:
+      app: parrot
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: parrot
+    spec:
+      containers:
+        - name: parrot
+          image: medeiser/parrot:latest
+          ports:
+            - containerPort: 3000
+---
+apiVersion: getambassador.io/v1
+kind: Mapping
+metadata:
+  name: parrot
+spec:
+  prefix: /parrot/
+  rewrite: ""
+  service: parrot-service:3000

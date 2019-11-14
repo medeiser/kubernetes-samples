@@ -1,0 +1,37 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: randomizer-service
+spec:
+  selector:
+    app: randomizer
+  ports:
+    - port: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: randomizer
+spec:
+  selector:
+    matchLabels:
+      app: randomizer
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: randomizer
+    spec:
+      containers:
+        - name: randomizer
+          image: medeiser/randomizer:latest
+          ports:
+            - containerPort: 3000
+---
+apiVersion: getambassador.io/v1
+kind: Mapping
+metadata:
+  name: randomizer
+spec:
+  prefix: /random-app/
+  service: randomizer-service:3000
