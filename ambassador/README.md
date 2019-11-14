@@ -1,4 +1,4 @@
-# Ambassador Ingress configuration sample
+# Ambassador configuration sample
 
 Sample applications [Parrot](https://github.com/medeiser/parrot) and [Randomizer](https://github.com/medeiser/randomizer) are deployed in the Cluster and [Ambassador](https://www.getambassador.io/) is configured to handle routing.
 
