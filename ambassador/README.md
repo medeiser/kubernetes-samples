@@ -1,6 +1,6 @@
 # Ambassador Ingress configuration sample
 
-Sample applications [Parrot](https://github.com/medeiser/parrot) and [Randomizer](https://github.com/medeiser/randomizer) are deployed in the Cluster and [Ambassador](https://www.getambassador.io/) is configured in order to enable dynamic routing for the apps.
+Sample applications [Parrot](https://github.com/medeiser/parrot) and [Randomizer](https://github.com/medeiser/randomizer) are deployed in the Cluster and [Ambassador](https://www.getambassador.io/) is configured to handle routing.
 
 ## Installation
 
