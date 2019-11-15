@@ -14,7 +14,7 @@ This can be done using a local Minikube cluster.
 
 ### *Scripts:*
 
-A scriot for using deploying the service using a predefined template was created:
+A script for using deploying the service using a predefined template was created:
 
 ```shell
 $ ./deploy-app.sh <app-name> <app-port>
