@@ -9,3 +9,7 @@ Minikube configuration for using Nginx as a cluster load balancer.
 ## Ambassador
 
 Minikube configuration for using [Ambassador](https://www.getambassador.io/).
+
+## Dynamic routing using Ambassador
+
+Minikube configuration for dynamically create routes in [Ambassador](https://www.getambassador.io/) using a template and a script.
