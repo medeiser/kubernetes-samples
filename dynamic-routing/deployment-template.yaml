@@ -1,0 +1,38 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{APP}}-service
+spec:
+  selector:
+    app: {{APP}}
+  ports:
+    - port: {{PORT}}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{APP}}
+spec:
+  selector:
+    matchLabels:
+      app: {{APP}}
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: {{APP}}
+    spec:
+      containers:
+        - name: {{APP}}
+          image: medeiser/{{APP}}:latest
+          ports:
+            - containerPort: {{PORT}}
+---
+apiVersion: getambassador.io/v1
+kind: Mapping
+metadata:
+  name: {{APP}}
+spec:
+  prefix: /{{APP}}/
+  service: {{APP}}-service:{{PORT}}
+  
