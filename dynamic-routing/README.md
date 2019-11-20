@@ -2,7 +2,7 @@
 
 Sample applications [Parrot](https://github.com/medeiser/parrot) and [Randomizer](https://github.com/medeiser/randomizer) are deployed dynamically using a template in combination with [Ambassador](https://www.getambassador.io/).
 
-## Installation
+## *Installation:*
 
 ```shell
 $ kubectl apply -f https://getambassador.io/yaml/ambassador/ambassador-rbac.yaml
