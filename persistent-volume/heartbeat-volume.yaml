@@ -1,0 +1,26 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: heartbeat-vol
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data/heartbeat-vol"
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: heartbeat-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: ""
+  volumeName: heartbeat-vol
+  resources:
+    requests:
+      storage: 1Gi

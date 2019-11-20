@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: heartbeat-app
+spec:
+  selector:
+    matchLabels:
+      app: heartbeat-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: heartbeat-app
+    spec:
+      containers:
+        - name: heartbeat-app
+          image: heartbeat-app:latest
+          imagePullPolicy: Never
+          env: 
+          - name: VOLUME
+            value: "/usr/src/app"
+          volumeMounts:
+          - mountPath: "/usr/src/app"
+            name: heartbeat-vol
+      volumes:
+      - name: heartbeat-vol
+        persistentVolumeClaim:
+          claimName: heartbeat-pvc
+
+          
