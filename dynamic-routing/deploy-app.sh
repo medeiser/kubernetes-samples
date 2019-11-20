@@ -6,6 +6,7 @@
 # Usage: ./deploy-app.sh <app-name> <app-port>
 #
 
+set -euxo pipefail
 
 # validate input
 if [ "$#" -ne 2 ]
